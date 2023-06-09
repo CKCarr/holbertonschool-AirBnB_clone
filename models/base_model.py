@@ -14,11 +14,13 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """Public attribuites initializing base Models """
         if kwargs:
-            if key == "created_at" or key == "updated_at":
-                value = datetime.strptime(value,
-                                                "%Y-%m-%dT%H:%M:%S.%f")
+            for key in kwargs:
+                if "created_at" in kwargs:
+                    self.created_at = datetime.strptime(kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f")
+                if "updated_at" in kwargs:
+                    self.updated_at = datetime.strptime(kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S.%f")
                 if key != "__class__":
-                    setattr(self, key, value)
+                        setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
@@ -38,10 +40,10 @@ class BaseModel:
     def to_dict(self):
         """returns a dictionary containing all
         keys/values of __dict__ of the instance:"""
-        dictionary = self.__dict__.copy()  # get a copy of dict
-        dictionary["__class__"] = self.__class__.__name__
-        dictionary["created_at"] = getattr(
-                                self, "created_at", None).isoformat()
-        dictionary["updated_at"] = getattr(
-                                self, "updated_at", None).isoformat()
-        return dictionary
+        new_dict = self.__dict__.copy()  # get a copy of dict
+        if "created_at" in new_dict:
+            new_dict["created_at"] = self.created_at.isoformat()
+        if "updated_at" in new_dict:
+            new_dict["updated_at"] = self.updated_at.isoformat()
+        new_dict["__class__"] = self.__class__.__name__
+        return new_dict
