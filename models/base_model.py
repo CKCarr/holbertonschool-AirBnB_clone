@@ -15,7 +15,7 @@ class BaseModel:
         """Public attribuites initializing base Models """
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        self.updated_at = self.created_at
 
     def __str__(self):
         """return string with class name,
@@ -33,6 +33,8 @@ class BaseModel:
         keys/values of __dict__ of the instance:"""
         dictionary = self.__dict__.copy()  # get a copy of dict
         dictionary["__class__"] = self.__class__.__name__
-        dictionary["created_at"] = self.created_at.isoformat()
-        dictionary["update_at"] = self.updated_at.isoformat()
+        dictionary["created_at"] = getattr(
+                                self, "created_at", None).isoformat()
+        dictionary["updated_at"] = getattr(
+                                self, "updated_at", None).isoformat()
         return dictionary
