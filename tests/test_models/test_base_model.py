@@ -5,6 +5,7 @@ import unittest
 from datetime import datetime
 from base_model import BaseModel
 
+
 class TestBaseModel(unittest.TestCase):
     """Class for testing BaseModel"""
     def test_save(self):
@@ -47,6 +48,23 @@ class TestBaseModel(unittest.TestCase):
         self.assertIn(base_model.__class__.__name__, base_model_str)
         self.assertIn(base_model.id, base_model_str)
         self.assertIn(str(base_model.__dict__), base_model_str)
+
+    def test_create_with_to_dict(self):
+        # Create the first BaseModel instance without arguments
+        base_model1 = BaseModel()
+
+        # Get the dictionary representation of the first instance
+        base_model1_dict = base_model1.to_dict()
+
+        # Create the second BaseModel instance
+        # using the dictionary representation
+        base_model2 = BaseModel(**base_model1_dict)
+
+        # Assert that the two instances have the same attribute values
+        self.assertEqual(base_model1.id, base_model2.id)
+        self.assertEqual(base_model1.created_at, base_model2.created_at)
+        self.assertEqual(base_model1.updated_at, base_model2.updated_at)
+
 
 if __name__ == "__main__":
     unittest.main()
