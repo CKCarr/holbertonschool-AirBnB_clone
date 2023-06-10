@@ -7,12 +7,18 @@ import models
 
 
 class FileStorage:
-    """ class FileStorage serializes instances to a JSON file and deserializes JSON file to instances:
-    Private class attributes: 
+    """ class FileStorage serializes instances to
+    a JSON file and deserializes JSON file to instances:
+    Private class attributes:
         __file_path: (string) - path to the JSON file (ex: file.json)
-        __objects: (dictionary) - empty but will store all objects by <class name>.id """
-    __file_path = "file.json"
+        __objects: (dictionary) - empty but will
+        store all objects by <class name>.id """
+    __file_path = "./file.json"
     __objects = {}
+
+    @classmethod
+    def clear(cls):
+        FileStorage.__objects = {}
 
     def all(self):
         """ returns the dictionary __objects """
@@ -32,15 +38,14 @@ class FileStorage:
             json.dump(new_dict, f)
 
     def reload(self):
-        """ Deserializes the JSON file to __objects (only if the JSON file (__file_path) exists """
-     if os.path.exists(self.__file_path):
         try:
-            with open(self.__file_path, "r") as file:
-                data = json.load(file)
-                for key, obj_dict in data.items():
-                    class_name, obj_id = key.split(".")
-                    # Assuming you have a static method from_dict() in each model class
-                    obj = eval(class_name).from_dict(obj_dict)
-                    self.__objects[key] = obj
-        except Exception:
+            with open(self.__file_path, 'r') as f:
+                data = json.load(f)
+                for key in data:
+                    class_name = data[key]['__class__']
+                    obj_dict = data[key]
+                    cls = getattr(models, class_name)
+                    instance = cls(**obj_dict)
+                    self.__objects[key] = instance
+        except FileNotFoundError:
             pass
