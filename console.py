@@ -1,19 +1,22 @@
 #!/usr/bin/python3
 """Module 6. Console 0.0.1"""
+
 import cmd
-import shlex  # Used to handle arguments with spaces in them.
-import models
+# Used to handle arguments with spaces in them.
+import shlex
+from models import storage
+from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
+
 
 class HBNBCommand(cmd.Cmd):
     """class HBNB inherits from cmd.Cmd, define
     methods and our own command-line applications"""
-
-    prompt = '(hbnb) '
     # Defining a custom prompt attribute
+    prompt = '(hbnb) '
 
     def __init__(self):
         super().__init__()
-        # self.storage = FileStorage() 
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
@@ -88,7 +91,8 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
         elif args[0] != "BaseModel":
-            print
+            print()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
