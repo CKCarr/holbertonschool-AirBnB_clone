@@ -16,6 +16,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
 
     def __init__(self):
+        """ init method to HBNBcommand subclass of cmd.CMD """
         super().__init__()
 
     def do_quit(self, arg):
