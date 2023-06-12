@@ -3,6 +3,8 @@
 
 import json
 import models
+from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:
@@ -12,7 +14,8 @@ class FileStorage:
         __file_path: (string) - path to the JSON file (ex: file.json)
         __objects: (dictionary) - empty but will
         store all objects by <class name>.id """
-    __file_path = "./file.json"
+
+    __file_path = "file.json"
     __objects = {}
 
     @classmethod
@@ -40,11 +43,10 @@ class FileStorage:
         try:
             with open(self.__file_path, 'r') as f:
                 data = json.load(f)
-                for key in data:
-                    class_name = data[key]['__class__']
-                    obj_dict = data[key]
+                for key, val in data.items():
+                    class_name = val['__class__']
                     cls = getattr(models, class_name)
-                    instance = cls(**obj_dict)
+                    instance = cls(**val)
                     self.__objects[key] = instance
         except FileNotFoundError:
             pass

@@ -2,16 +2,29 @@
 """ This module writes Unittest for User class """
 
 import unittest
+import os
 from models.user import User
+from models import storage
+from models.engine.file_storage import FileStorage
 
-
-class TestUser(unittest.TestCase):
+class Test_User(unittest.TestCase):
     """ This class TestUser defines Unittest for User class """
+
+    @classmethod
+    def setUpClass(cls):
+        # Delete any existing storage files
+        storage_file = "file.json"
+        if os.path.exists(storage_file):
+            os.remove(storage_file)
 
     def setUp(self):
         """
         This method set up an instance of User before each test
         """
+        # Initialize a new storage instance for each test
+        storage.reload()
+        FileStorage.clear()
+        # Create an instance of User
         self.user = User()
 
     def tearDown(self):
@@ -37,19 +50,19 @@ class TestUser(unittest.TestCase):
         self.assertTrue(hasattr(self.user, "first_name"))
         self.assertTrue(hasattr(self.user, "last_name"))
         self.assertEqual(self.user.email, "")
-        self.assertEqual(self.user.email, "")
-        self.assertEqual(self.user.email, "")
-        self.assertEqual(self.user.email, "")
+        self.assertEqual(self.user.password, "")
+        self.assertEqual(self.user.first_name, "")
+        self.assertEqual(self.user.last_name, "")
 
     def test_email_attr(self):
         """
         This method tests the email attribute
         """
         self.assertTrue(hasattr(self.user, "email"))
-        self.assertEqual(self.user, "")
+        self.assertEqual(self.user.email, "")
         self.user.email = "user@example.com"
         self.assertIsInstance(self.user.email, str)
-        self.asserEqual(self.user.email, "user@example.com")
+        self.assertEqual(self.user.email, "user@example.com")
 
     def test_password_attr(self):
         """

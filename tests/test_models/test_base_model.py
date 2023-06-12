@@ -3,10 +3,11 @@
 
 import unittest
 from datetime import datetime
-from base_model import BaseModel
+from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
 
 
-class TestBaseModel(unittest.TestCase):
+class Test_Base_Model(unittest.TestCase):
     """Class for testing BaseModel"""
     def test_save(self):
         """Test save method"""

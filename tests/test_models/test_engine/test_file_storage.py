@@ -3,12 +3,14 @@
 
 import unittest
 from models import BaseModel
-from file_storage import FileStorage
+from models import storage
+from models.engine.file_storage import FileStorage
 import os
 
 
 class TestFileStorage(unittest.TestCase):
     """ Class to test file storage engine an the methods it holds """
+
     def setUp(self):
         """ This method  is called before(sets up) each
         case is run
@@ -56,13 +58,13 @@ class TestFileStorage(unittest.TestCase):
         """ Test if file path is set correctly """
         self.assertEqual(
             self.file_storage._FileStorage__file_path,
-            "./file.json")
+            "file.json")
 
     def tearDown(self):
         """ This method is called after each test is run and tears
         down the set up and any instance created """
         try:
-            os.remove(self.file_storage. FileStorage__file_path)
+            os.remove("file.json")
         except FileNotFoundError:
             pass
 
