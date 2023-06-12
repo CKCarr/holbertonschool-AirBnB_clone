@@ -2,7 +2,6 @@
 """ Module for FileStorage class """
 
 import json
-import os
 import models
 
 

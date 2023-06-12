@@ -4,6 +4,7 @@ instance for your application"""
 
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
+import models
 
 storage = FileStorage()
 storage.reload()
