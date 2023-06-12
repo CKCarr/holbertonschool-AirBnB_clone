@@ -1,7 +1,10 @@
 
-<title>Project: AirBnB clone - The console </title>
+<h1><title>Project: AirBnB clone - The console </h1> </title>
    
-<p><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2FAirbnb&psig=AOvVaw2xG-eHGr0dj1p8JV71h6wv&ust=1686696070369000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLiG1djmvv8CFQAAAAAdAAAAABAI" alt="" loading='lazy' style="" /></p>
+<p>
+  <img src="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fmedium.com%2Fkeycafe%2Fthe-history-of-airbnb-397c3d539f27&amp;psig=AOvVaw2xG-eHGr0dj1p8JV71h6wv&amp;ust=1686696070369000&amp;source=images&amp;cd=vfe&amp;ved=0CBAQjRxqFwoTCLiG1djmvv8CFQAAAAAdAAAAABAQ" alt="" loading="lazy" style="" />
+</p>
+
 
 <h4>Description</h4>
 
@@ -76,8 +79,8 @@ Instructions on how to use them in your own application are linked below.
 | Update | Update objects |
 | Destroy | Destroy Objects |
 
-AUTHORS
+## AUTHORS
 
-Crystal Carrillo <6108@holbertonstudents.com>
-Carlos Alarcon   <6138@holbertonstudents.com>
+<br>Crystal Carrillo <6108@holbertonstudents.com>
+<br>Carlos Alarcon   <6138@holbertonstudents.com>
 
