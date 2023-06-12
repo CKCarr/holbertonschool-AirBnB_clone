@@ -21,7 +21,7 @@ class Test_Review(unittest.TestCase):
         # Initialize a new storage instance for each test
         storage.reload()
         FileStorage.clear()
-        # Create an instance of User
+        # Create an instance of review
         self.review = Review()
 
     def tearDown(self):
@@ -30,7 +30,7 @@ class Test_Review(unittest.TestCase):
         """
         del self.review
 
-    def test_review_inherits_from_BaseModel(self):
+    def test_review_inheritance(self):
         """
         This method checks if Review class inherits from BaseModel
         """
