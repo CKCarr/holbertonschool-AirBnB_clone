@@ -29,7 +29,6 @@ class BaseModel:
             self.updated_at = self.created_at
             models.storage.new(self)
 
-
     def __str__(self):
         """return string with class name,
         id, dictionary class"""
@@ -46,7 +45,7 @@ class BaseModel:
         """returns a dictionary containing all
         keys/values of __dict__ of the instance:"""
         # get a copy of dict
-        new_dict = self.__dict__.copy()  
+        new_dict = self.__dict__.copy()
         if "created_at" in new_dict:
             new_dict["created_at"] = self.created_at.isoformat()
         if "updated_at" in new_dict:
