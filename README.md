@@ -1,5 +1,5 @@
 
-<h1><title>Project: AirBnB clone - The console </h1> </title>
+<h1> </title>Project: AirBnB clone - The console </title></h1>
    
 <p>
   <img src="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fmedium.com%2Fkeycafe%2Fthe-history-of-airbnb-397c3d539f27&amp;psig=AOvVaw2xG-eHGr0dj1p8JV71h6wv&amp;ust=1686696070369000&amp;source=images&amp;cd=vfe&amp;ved=0CBAQjRxqFwoTCLiG1djmvv8CFQAAAAAdAAAAABAQ" alt="" loading="lazy" style="" />
