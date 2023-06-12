@@ -1,11 +1,30 @@
 #!/usr/bin/python3
-"""Module 7. Console 0.1 """
+"""Module that contains the code for the command
+interpreter"""
+
 import cmd
 import models
+from multiprocessing.sharedctypes import Value
 from models.engine.file_storage import FileStorage
 from models import storage
 from models.base_model import BaseModel
-classes = {'BaseModel': BaseModel}
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+
+
+classes = {
+    "BaseModel": BaseModel,
+    "User": User,
+    "State": State,
+    "City": City,
+    "Amenity": Amenity,
+    "Place": Place,
+    "Review": Review
+}
 
 
 class HBNBCommand(cmd.Cmd):
