@@ -1,9 +1,1 @@
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-{"BaseModel.aded50e2-5bad-4196-a8d3-1d3f0c428508": {"created_at": "2023-06-10T08:08:14.663982", "updated_at": "2023-06-10T08:08:14.663996", "id": "aded50e2-5bad-4196-a8d3-1d3f0c428508", "name": "My_First_Model", "my_number": 89, "__class__": "BaseModel"}, "BaseModel.2d0833f4-4f78-4184-8abc-bf94a1d99c11": {"id": "2d0833f4-4f78-4184-8abc-bf94a1d99c11", "created_at": "2023-06-10T08:22:06.462893", "updated_at": "2023-06-10T08:22:06.462904", "name": "My_First_Model", "my_number": 89, "__class__": "BaseModel"}}
-=======
-{"BaseModel.fe003e59-4cfd-47ed-a3d3-c0fbe2c21ab7": {"id": "fe003e59-4cfd-47ed-a3d3-c0fbe2c21ab7", "created_at": "2023-06-12T10:36:12.916673", "updated_at": "2023-06-12T10:36:12.916694", "first_name": "Betty", "__class__": "BaseModel"}}
->>>>>>> Stashed changes
-=======
-{}
->>>>>>> 99ec913e867f3aa065df21fe2ef2b9a23b95865d
+{"BaseModel.71ed2ea6-c6fa-4962-9f4c-922fe275582d": {"id": "71ed2ea6-c6fa-4962-9f4c-922fe275582d", "created_at": "2023-06-12T13:08:04.224097", "updated_at": "2023-06-12T13:08:04.224113", "__class__": "BaseModel"}}
