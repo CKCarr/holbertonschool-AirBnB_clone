@@ -21,6 +21,13 @@
 </ul>
 
 
+<h3>Diagram AirBnB clone (The Console)</h3>
+
+<p>
+  <img src="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230615%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230615T210513Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=067d0a1d183e0e3f2cfc218292f4a1339cc1bb3850dcc100b5ab9c3ac17801b8" alt="Logo_Airbnb" loading="lazy" style="" />
+</p>
+
+
 <h3>Files in this Repository</h3>
 
 | No. | File               | File Hierarchy                          | Description                                    |
@@ -28,7 +35,7 @@
 | 1   | console.py         |                                         | The main console, command interpreter (EOF, all, create, destroy, help, quit, show, update.) |
 | 2   | Authors            |                                         | File with the name of Authors                  |                          
 | 3   | README.md          |                                         | Readme file proyect                            |
-| 4   | __init__.py        | models/__init__.py                      | File to mark a directory as a package          |
+| 4   | '__init__.py'        | models/__init__.py                      | File to mark a directory as a package          |
 | 5   | amenity.py         | models/amenity.py                       | The amenity subclass                           |
 | 6   | base_model.py      | models/base_model.py                    | Defines all common attributes/methods for other classes |
 | 7   | city.py            | models/city.py                           | The city subclass                              |
@@ -45,7 +52,7 @@
 | 18  | test_review.py     | tests/test_models/review.py              | The unittest module for review                 |
 | 19  | test_state.py      | tests/test_models/state.py               | The unittest module for state                  |
 | 20  | test_user.py       | tests/test_models/user.py                | The unittest module for user                   |
-| 21  | __init__.py        | tests/test_models/test_engine/__init__.py | File to mark a directory as a package         |
+| 21  | '__init__.py'        | tests/test_models/test_engine/__init__.py | File to mark a directory as a package         |
 | 22  | test_file_storage.py| tests/test_models/test_engine/test_file_storage.py | The unittest module for file storage   |
 
 
