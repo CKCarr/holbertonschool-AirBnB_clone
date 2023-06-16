@@ -24,7 +24,7 @@
 <h3>Diagram AirBnB clone (The Console)</h3>
 
 <p>
-  <img src="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230615%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230615T210513Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=067d0a1d183e0e3f2cfc218292f4a1339cc1bb3850dcc100b5ab9c3ac17801b8" alt="Logo_Airbnb" loading="lazy" style="" />
+  <img src="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230615%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230615T210513Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=067d0a1d183e0e3f2cfc218292f4a1339cc1bb3850dcc100b5ab9c3ac17801b8" alt="console_Airbnb" loading="lazy" style="" />
 </p>
 
 
