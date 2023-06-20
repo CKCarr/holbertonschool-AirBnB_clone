@@ -4,7 +4,6 @@ interpreter"""
 
 import cmd
 import models
-from multiprocessing.sharedctypes import Value
 from models.engine.file_storage import FileStorage
 from models import storage
 from models.base_model import BaseModel
@@ -107,17 +106,19 @@ class HBNBCommand(cmd.Cmd):
         """
         Method that prints a string representation
         of all objects based on the class name given
-        or all objects if no class given.
+        or all objects if no class name given.
         """
-        if arg == "":
-            for k in storage.all():
-                print([str(storage.all()[k])])
-        elif arg not in classes.keys():
+        if "." not in arg:
+            print("** Unknown syntax: {}.all()".format(arg))
+            return
+        class_name = arg.split(".")[0]
+        if class_name not in classes.keys():
             print("** class doesn't exist **")
-        else:
-            for k, v in storage.all().items():
-                if arg == v.__class__.__name__:
-                    print([str(storage.all()[k])])
+            return
+
+        for obj in storage.all().values():
+            if obj.__class__.__name__ == class_name:
+                print(str(obj))
 
     def do_update(self, args):
         """
@@ -144,6 +145,26 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
             else:
                 print("** no instance found **")
+
+
+    def do_count(self, args):
+        """ retrieve the number of instances of a class """
+        if "." not in arg:
+            print("** Unknown syntax: {}.count()".format(arg))
+            return
+        args = args.split()
+        if len(args) == 0:
+            print("** class name missing **")
+            return
+        class_name = arg.split(".")[0]
+        if class_name not in classes.keys():
+            print("** class doesn't exist **")
+            return
+        instance_count = 0
+        for obj_instance in storage.all().values():
+            if obj_instance.__class__.__name__ == class_name:
+                instance_count += 1
+            print(instance_count)
 
 
 if __name__ == '__main__':
